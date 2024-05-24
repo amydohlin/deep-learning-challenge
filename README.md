@@ -57,11 +57,30 @@ Figs 5 and 6: Optimization attempt # 1 model and evaluation.
 Figs 7 and 8: Optimization attempt # 2 model and evaluation.
   
 #### Optimization Attempt # 3:
-* My final attempt at optimization was to employ the auto-optimizer kerastuner. Using module 21-2 activities 04 and 05 as guidelines, I set the tuner to create a sequential model with hyperparameter options. I allowed kerastuner to choose between relu, tanh, and sigmoid activations; between 1 and 41 neurons in the first layer (41 being the limit because there is a total of 41 columns in the dataframe used); 1 to 5 hidden layers with 1 to 15 neurons each; and lastly I set the output activation as sigmoid.
+* My final attempt at optimization was to employ the auto-optimizer kerastuner. Using module 21-2 activities 04 and 05 as guidelines, I set the tuner to create a sequential model with hyperparameter options. I allowed kerastuner to choose between relu, tanh, and sigmoid activations. In my first iteration, I set the tuner to choose between 1 and 41 neurons in the first layer (41 being the limit because there is a total of 41 columns in the dataframe used); 1 to 5 hidden layers with 1 to 15 neurons each; set the output activation as sigmoid; and set the tuner to run a maximum of 100 epochs with 5 iterations. This set up proved to be inefficient and allowed too many variations to be made, as it took over 6 hours to run and the best accuracy it could get was 0.7299. See figure 9.
+
+![alt text](ScreenShots/10_auto_opti_attempt1.png)
+
+Fig 9: auto-optimization attempt # 1 accuracy and run time
+
+* After consulting with classmates and my instructional team, I tweaked the tuner to only choose a maximum of 20 neurons in the first hidden layer, with a step of 4; a maximum of 10 neurons in the second hidden layer with a step of 3; and set the tuner to run a maximum of 20 epochs and 2 iterations. This model only took 24 minutes to run, and the accuracy was only marginally better with the best being 0.7301. Figures 10 and 11 show the code used (which includes some code from the first auto-attempt commented out), and figure 12 shows the run time and accuracy score.
+
+  ![alt text](ScreenShots/10_auto_opti_attempt.png)
+  ![alt text](ScreenShots/11_auto_opti_final.png)
+
+  Figs 10 and 11: code for the second auto-optimization attempt
+
+
+  ![alt text](ScreenShots/12_auto.png)
+
+  Fig 12: best accuracy score and run time for the second auto-optimization attempt
 
 **Were you able to achieve the target model performance?**
+Unfortunately I was not able to achieve the target model performance of 0.750 (75%). The closest that I was able to get was 0.7301 (73.01%).
 
 
 -----------------------------------
 ## Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
-Overall, the closest that I was able to get to 0.750 accuracy was -.
+Overall, the closest that I was able to get to 0.750 accuracy was 0.7301. I do not think that I changed the model settings enough (in either the manual optimizations or the auto-optimizations) to create a drastic difference in accuracy. 
+
+My recommendations for other models to try would be either a random forest or a decision tree. I believe with the binning/separating out columns, random forest might be able to more efficiently tackle the different predictions. The decision tree might be a better fit though, because it shows each decision process at each level.
