@@ -13,11 +13,13 @@ The purpose of this analysis was to create a model that would help Alphabet Soup
 * Model Features (Independent Variables): after preprocessing the data, the chosen features were APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, and ASK_AMT for the original model (before optimization). In the optimization portion, I kept all features except SPECIAL_CONSIDERATIONS. Figure 1 shows the original preprocessed data.
   
   ![alt text](Screen Shots/02_orginal_dropped_cols.png)
+  
   Fig 1, original preprocessed data
 
 * Removed Variables (no impact on features or target): in the original model, only the EIN and NAME columns were dropped. In the optimization file I also dropped SPECIAL_CONSIDERATIONS. I chose to remove that feature due to the majority of the values being N and a very small percentage being special considerations (~0.08%), and I did not think that this would have much, if any, impact on the target. See figure 2 for the optimized preprocessed data.
 
   ![alt text](Screen Shots/03_opti_dropped_cols.png)
+  
   Fig 2, optimized preprocessed data without SPECIAL_CONSIDERATIONS
 
 ### Compiling, Training, and Evaluating the Model
@@ -28,6 +30,7 @@ The purpose of this analysis was to create a model that would help Alphabet Soup
 
   ![alt text](Screen Shots/04_original_model_layers.png)
   ![alt text](Screen Shots/05_original_model_eval.png)
+  
   Figs 3 and 4, original model layers and evaluation
 
 #### What steps did you take in your attempts to increase model performance?
