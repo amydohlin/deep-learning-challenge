@@ -12,7 +12,7 @@ The purpose of this analysis was to create a model that would help Alphabet Soup
 * Model Target (Dependent Variable): the column "IS_SUCCESSFUL" was chosen as my target, since a successful company was the ultimate goal of each applicant. Each applicant's success was marked with a 0 or a 1.
 * Model Features (Independent Variables): after preprocessing the data, the chosen features were APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, and ASK_AMT for the original model (before optimization). In the optimization portion, I kept all features except SPECIAL_CONSIDERATIONS. Figure 1 shows the original preprocessed data.
   
-![alt text](Screen Shots/02_orginal_dropped_cols.png)
+![alt text]([Screen Shots/02_orginal_dropped_cols.png](https://github.com/amydohlin/deep-learning-challenge/blob/main/ScreenShots/01_original_data.png))
   
   Fig 1, original preprocessed data
 
