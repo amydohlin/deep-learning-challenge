@@ -12,13 +12,13 @@ The purpose of this analysis was to create a model that would help Alphabet Soup
 * Model Target (Dependent Variable): the column "IS_SUCCESSFUL" was chosen as my target, since a successful company was the ultimate goal of each applicant. Each applicant's success was marked with a 0 or a 1.
 * Model Features (Independent Variables): after preprocessing the data, the chosen features were APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, and ASK_AMT for the original model (before optimization). In the optimization portion, I kept all features except SPECIAL_CONSIDERATIONS. Figure 1 shows the original preprocessed data.
   
-  ![alt text](Screen Shots/02_orginal_dropped_cols.png)
+![alt text](Screen Shots/02_orginal_dropped_cols.png)
   
   Fig 1, original preprocessed data
 
 * Removed Variables (no impact on features or target): in the original model, only the EIN and NAME columns were dropped. In the optimization file I also dropped SPECIAL_CONSIDERATIONS. I chose to remove that feature due to the majority of the values being N and a very small percentage being special considerations (~0.08%), and I did not think that this would have much, if any, impact on the target. See figure 2 for the optimized preprocessed data.
 
-  ![alt text](Screen Shots/03_opti_dropped_cols.png)
+![alt text](Screen Shots/03_opti_dropped_cols.png)
   
   Fig 2, optimized preprocessed data without SPECIAL_CONSIDERATIONS
 
@@ -28,8 +28,8 @@ The purpose of this analysis was to create a model that would help Alphabet Soup
 * I started with 2 hidden layers and 3 nodes in each hidden layer. The loss was significant at around 8, and the accuracy was around 0.42. I used 100 epochs in this iteration
 * Using Xpert Learning Assistant to help determine the number of nodes (it recommended using a number between the number of inputs and outputs), I chose 10 to see how the loss and accuracy were affected. I chose to keep the activation for each layer and the output layer to be relu since it is usually the default. This resulted in with a loss of 0.597 and an accuracy of 0.725. Figures 3 and 4 show the original layers, nodes, output, and evaluation scores.
 
-  ![alt text](Screen Shots/04_original_model_layers.png)
-  ![alt text](Screen Shots/05_original_model_eval.png)
+![alt text](Screen Shots/04_original_model_layers.png)
+![alt text](Screen Shots/05_original_model_eval.png)
   
   Figs 3 and 4, original model layers and evaluation
 
